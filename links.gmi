@@ -9,6 +9,8 @@
 Русскоязычный пабникс.
 => gemini://warmedal.se/~antenna/ Антенна
 Аггрегатор новых публикаций.
+=> gemini://skyjake.fi/~Cosmos/ Cosmos
+Аггрегатор от товарища skyjake.
 => gemini://konpeito.media/ Konpeito
 Лоуфай-хипохоп альбом эксклюзивно для Gemini.
 => gemini://gemini.circumlunar.space/users/hundredrabbits/ Hundredrabbits
@@ -19,6 +21,7 @@
 ## Русскоязычные бложики
 => gemini://phreedom.club/~tolstoevsky/ Толстоевский
 => gemini://hugeping.ru/ Станция Пинг
-
+=> gemini://armitage.flounder.online/ armitage
+=> gemini://topotun.hldns.ru/ Топотун
 
 => / Назад
