@@ -1,0 +1,141 @@
+# О том, как сортировать свою медиатеку по тегам
+Пришло время для действительно полезной статьи.
+Пользователи Windows могут сразу проходить мимо.
+
+## Да где же эта чертова картинка!?
+У меня 10Гб картинок на жестком диске. Не фото высокого разрешения, а просто жпеги из интернета вперемешку с немногочисленными гиф.
+Звучит как нездоровая хрень, а оно так и есть. А знаете еще более нездорово? Я их всех сортирую по тегам.
+
+Но согласитесь, удобно же!
+
+## TMSU
+Есть такая утилита для linux: tmsu.
+
+=> https://tmsu.org/
+
+Работать с ней очень просто:
+```bash
+$ tmsu help
+TMSU
+
+  config    Views or amends database settings
+  copy      Create a copy of a tag
+  delete    Delete one or more tags
+  dupes     Identify duplicate files
+  files     List files with particular tags
+  help      List subcommands or show help for a particular subcommand
+  imply     Creates a tag implication
+  info      Show database information
+  init      Initializes a new database
+  merge     Merge tags
+  mount     Mount the virtual filesystem
+  rename    Rename a tag or value
+  repair    Repair the database
+  status    List the file tagging status
+  tag       Apply tags to files
+  tags      List tags
+  unmount   Unmount the virtual filesystem
+  untag     Remove tags from files
+  untagged  List untagged files
+  values    List values
+
+Global options:
+
+  -v --verbose   show verbose messages
+  -h --help      show help and exit
+  -V --version   show version information and exit
+  -D --database  use the specified database
+     --color     colorize the output (auto/always/never)
+
+Specify subcommand name for detailed help on a particular subcommand, e.g. tmsu help files
+```
+
+## Начинаем работу
+Сначала создадим папку, в которую смонтируем виртуальную файловую систему.
+С помощью этой виртуальной файловой системы мы сможем искать файлы с помощью тегов прямо в файловом менеджере нашей ОС.
+```bash
+$ mkdir tagfs
+$ tmsu mount tagfs
+```
+
+А теперь проярлычим какой-нибудь файл:
+```bash
+$ tmsu tag 43873874347.jpg konosuba anime art
+```
+
+А теперь магия, заходим в файловый менеджер по этому пути:
+```
+~/tagfs/queries/art AND konosuba
+```
+
+TMSU вообще очень мощная утилита, в запросах могут быть логические выражения, из тегов можно формировать графы (к примеру если один тег подразумевает другой).
+
+## Интегрируем в файловый менеджер
+Ярлычить файлы из консоли это конечно круто, но не удобно. Особенно это касается картинок, на которые нужно взглянуть перед тем как ярлычить.
+Добавим в контекстное меню файлового менеджера пункт `Добавить теги`.
+Я использую Elementary OS, с его Pantheon. Для своей OS ищите путь к конфигам сами, но благо в линуксах они мало чем отличаются друг от друга.
+В папке `/usr/share/contractor` создадим `tmsu.contract`:
+```conf
+[Contractor Entry]
+Name=Добавить теги
+Description=Add tags
+Icon=/home/ostov/tmsu/tmsu.png
+MimeType=!inode;
+Exec=sh -c 'tmsu tag --tags "$(zenity --entry --text "Добавить теги:")" %F && notify-send "Теги добавлены" -i /home/ostov/tmsu/tmsu.png'
+Gettext-Domain=sh
+```
+Я использовал `zenity` чтобы вызывать простые формы из консоли, `notify-send` для отправки уведомления, что операция выполнена успешно.
+
+Прекрасно, теперь можно добавлять теги к одному или нескольким файлам прямо в Пантеоне.
+
+Но! Есть еще один момент...
+
+## Автоматизируем
+У меня 10Гб картинок, и там очень много картинок с бур.
+=> https://ru.touhouwiki.net/wiki/Booru wiki://Booru
+
+И думаете я действительно буду вручную ярлычить просто огромное количество хентайных картинок? Я попытался конечно, но быстро бросил.
+
+Давайте всё автоматизируем, будем использовать стороннее апи, закидывать туда картинку, и получать теги. Слава машинам!
+Я написал вот такой скрипт на JS:
+```js
+let iqdb = require('@l2studio/iqdb-api')
+let fs = require('fs')
+const { exec } = require('child_process');
+
+let path = '/home/ostov/Изображения/'
+
+let $ignore = fs.readFileSync('qtag.ignore', {encoding: 'utf8'}).split('\n')
+
+exec('tmsu files',(err, $files) => {
+let $f = $files.split('\n').concat($ignore)
+files = fs.readdirSync(path, {withFileTypes: true})
+        .filter(dirent => dirent.isFile())
+        .map(dirent => dirent.name)
+        .filter(file => file.indexOf('sample') > -1 && file.indexOf('gif') == -1)
+        .filter(file => !$f.includes(path + file));
+
+(async () => {
+    for await (file of files) {
+        console.log(file, '...')
+        let data = fs.readFileSync(path + file)
+        let tags = (await iqdb.search(data)).results.find(res => res.match == 'best')?.thumbnail.tags
+        if(tags) {
+            console.log(file,':',tags.map(tag => tag.replace(/\s/g, '_').replace(/\//g, '_').replace(/\\/g, '_').replace(/'/g, '-')).join(' '), '\n\n')
+            exec(`tmsu tag ${path + file} ${tags.map(tag => `'${tag.replace(/\s/g, '_').replace(/\//g, '_').replace(/\\/g, '_').replace(/'/g, '-')}'`).join(' ')}`, err => console.log(err))
+        }
+        fs.writeFileSync('qtag.ignore', path+file + '\n', {flag: 'a', encoding: 'utf8'})
+    }
+    })()
+});
+```
+
+И это работает! К тому же можно в любой момент остановить скрипт, и потом начать с того места, на котором остановился, скрипт запоминает уже проярлыченые файлы.
+Для оптимизации так же я заставил скрипт брать только те файлы, в которых есть слово `sample`, ибо в моей папке `Изображения` есть львиная доля файлов не с бур, а с имиджборд.
+
+Только не забудьте создать рядом со скриптом файл `qtag.ignore`.
+
+## В заключение
+Вот как-то так. Надеюсь у кого-то упростится жизнь.
+
+=> / Назад
