@@ -29,7 +29,7 @@
 Почта для связи.
 
 ## 📝 Статьи
-=> /articles/nai.gmi NovelAI Image Generation
+=> /articles/nai.gmi 2022-10-20 NovelAI Image Generation
 => /articles/stockings.gmi 2022-10-17 Концепция сети Stockings
 => /articles/tags.gmi 2022-10-17 О том, как сортировать медиатеку по тегам
 => /articles/rus-oblasti.gmi 2022-10-17 Херсон, ДНР, ЛНР, Запорожье - это Россия!
