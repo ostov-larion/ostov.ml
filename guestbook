@@ -1,0 +1,2 @@
+echo "## $(date -u)" >> guestbook.gmi
+echo $1 >> guestbook.gmi
