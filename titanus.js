@@ -27,7 +27,7 @@ app.on('/:cgi', (req, res) => {
           execFileSync(`./${req.params.cgi}`, [req.query.replace(/\n/g,'\\n')])
       }
       catch(e) {
-          console.log('INPUT ERROR: CGI error.')
+          console.log(`INPUT ERROR: CGI error. ${e}`)
           res.error(52, "This route not found.")
           return
       }
