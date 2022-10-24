@@ -1,0 +1,95 @@
+# Bytebeat
+Искусство создания музыки одной строчкой C-кода.
+
+```
+
+  ____        _       _                _
+ |  _ \      | |     | |              | |
+ | |_) |_   _| |_ ___| |__   ___  __ _| |_
+ |  _ <| | | | __/ _ \ '_ \ / _ \/ _` | __|
+ | |_) | |_| | ||  __/ |_) |  __/ (_| | |_
+ |____/ \__, |\__\___|_.__/ \___|\__,_|\__|
+         __/ |
+        |___/
+
+```
+
+## Как всё началось
+Как-то весьма давно (я тогда еще школьником был), я наткнулся на вот это вот видео:
+=> https://www.youtube.com/watch?v=GtQdIYUtAHg Youtube :: Bytebeat: Experimental music from very short C programs
+
+В 2011 году господин с никнеймом viznut экспериментировав с выводом байтов на аудио-карту обнаружил,
+что короткие математические формулы способны генерировать не только звук, но и музыку!
+
+Так появился новый поджанр электронной музыки: bytebeat.
+
+Кстати, этот горячий финский парень ведет свой интересный блог:
+=> http://viznut.fi/en/ Viznut
+
+Сам жанр напрямую относится к демо-сцене.
+Ведь в этом и суть демо-сцены: создавать из маленького что-то очень комплексное и прекрасное.
+
+## Как это работает?
+Мы создаем бесконечный цикл, с счетчиком `t`, который бесконечно увеличиваем на единицу, и отправляем результат формулы на аудио-карту.
+Всё гениальное - просто.
+
+## Классические композиции
+### viznut - Sin() isn't kosher, people!
+```c
+10*(t>>6|t|t>>(t>>16))+(7&t>>11)
+```
+=> /audio/sin_isnt_kosher.ogg viznut - Sin() isn't kosher, people!
+
+### viznut - Combined xpansive's and varjohukka's stuff
+```c
+(t>>7|t|t>>6)*10+4*(t&t>>13|t>>6)
+```
+=> /audio/combined.ogg Combined xpansive's and varjohukka's stuff
+
+## Ни одним C едины
+Жанр стал популярен в узких кругах.
+Создавались (и создаются) треды на имиджбордах, на форумах демо-сценеров, на форумах чиптюнеров.
+
+Были созданы онлайн-плееры bytebeat, использующие JS, вместо C.
+=> https://dollchan.net/bytebeat/index.html Такие как Dollchan Bytebeat Composer
+
+Там же вы можете найти обширную библиотеку известных композиций.
+
+И вот тут-то есть куда разойтись.
+Bytebeat это не только про забавные пиликающие звуки, энтузиасты сделали и достаточно сложные композиции, которые иначе как музыкой и не назовешь.
+
+### raphaelgoulart - Fortnite Default Dance in Bytebeat
+=> /other/fortnite.txt Source code
+=> /audio/fortite.ogg Fortnite Default Dance in Bytebeat
+
+### gasman - Never Gonna Give You Up
+=> /other/never.txt Source code
+=> /audio/never_gonna_give_you_up.ogg Never Gonna Give You Up
+
+### Jimmyoshi - HITLER-CHANデートシム
+=> /other/hitler-chan.txt Source Code
+=> /audio/hitler-chan Jimmyoshi - HITLER-CHANデートシム
+
+### Savestate - Earl Grey Groove
+=> /other/earl_gray.txt Source Code
+=> /audio/earl_grey_groove.ogg Savestate - Earl Grey Groove
+
+### pigdevil2010 - Last Fountain
+=> /other/last_fountain.txt Source Code
+=> /audio/last_fountain.ogg pigdevil2010 - Last Fountain
+
+### pigdevil2010 - Last Palette
+=> /other/last_pallete.txt Source code
+=> /audio/last_pallete.ogg pigdevil2010 - Last Palette
+
+## В заключение
+О байтбите я знаю давно, но мало кому говорю. Обычно забываю о нём, но возвращаюсь к нему время от времени, и экспериментирую.
+
+Интересно то, что многие байтбит-композиции представляют из себя фракталы. Это многое объясняет.
+
+Надеюсь узнали что-то новое.
+
+Вот напоследок гайд по байтбиту:
+=> https://nightmachines.tv/downloads/Bytebeats_Beginners_Guide_TTNM_v1-5.pdf Гайдик
+
+=> / Назад

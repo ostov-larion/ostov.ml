@@ -25,7 +25,4 @@ Disco Diffusion идеально подходит для пейзажей, но 
 ## Опробовать Disco Diffusion
 => https://colab.research.google.com/github/alembics/disco-diffusion/blob/main/Disco_Diffusion.ipynb Google Colab Disco Diffusion
 
-## Моя коллекция нейроартов
-=> /ai.gmi AI Gallery (SFW)
-
 => / Назад
