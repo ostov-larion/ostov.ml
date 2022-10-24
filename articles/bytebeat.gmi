@@ -38,13 +38,13 @@
 ```c
 10*(t>>6|t|t>>(t>>16))+(7&t>>11)
 ```
-=> /audio/sin_isnt_kosher.ogg viznut - Sin() isn't kosher, people!
+=> /audio/sin_isnt_kosher.ogg 🎼 viznut - Sin() isn't kosher, people!
 
 ### viznut - Combined xpansive's and varjohukka's stuff
 ```c
 (t>>7|t|t>>6)*10+4*(t&t>>13|t>>6)
 ```
-=> /audio/combined.ogg Combined xpansive's and varjohukka's stuff
+=> /audio/combined.ogg 🎼 Combined xpansive's and varjohukka's stuff
 
 ## Ни одним C едины
 Жанр стал популярен в узких кругах.
@@ -59,28 +59,28 @@
 Bytebeat это не только про забавные пиликающие звуки, энтузиасты сделали и достаточно сложные композиции, которые иначе как музыкой и не назовешь.
 
 ### raphaelgoulart - Fortnite Default Dance in Bytebeat
-=> /other/fortnite.txt Source code
-=> /audio/fortite.ogg Fortnite Default Dance in Bytebeat
+=> /other/fortnite.txt 🖹 Source code
+=> /audio/fortite.ogg 🎼 Fortnite Default Dance in Bytebeat
 
 ### gasman - Never Gonna Give You Up
-=> /other/never.txt Source code
-=> /audio/never_gonna_give_you_up.ogg Never Gonna Give You Up
+=> /other/never.txt 🖹 Source code
+=> /audio/never_gonna_give_you_up.ogg 🎼 Never Gonna Give You Up
 
-### Jimmyoshi - HITLER-CHANデートシム
-=> /other/hitler-chan.txt Source Code
-=> /audio/hitler-chan Jimmyoshi - HITLER-CHANデートシム
+### Jimmyoshi - HITLER-CHAN
+=> /other/hitler-chan.txt 🖹 Source Code
+=> /audio/hitler-chan 🎼 Jimmyoshi - HITLER-CHAN
 
 ### Savestate - Earl Grey Groove
-=> /other/earl_gray.txt Source Code
-=> /audio/earl_grey_groove.ogg Savestate - Earl Grey Groove
+=> /other/earl_gray.txt 🖹 Source Code
+=> /audio/earl_grey_groove.ogg 🎼 Savestate - Earl Grey Groove
 
 ### pigdevil2010 - Last Fountain
-=> /other/last_fountain.txt Source Code
-=> /audio/last_fountain.ogg pigdevil2010 - Last Fountain
+=> /other/last_fountain.txt 🖹 Source Code
+=> /audio/last_fountain.ogg 🎼 pigdevil2010 - Last Fountain
 
 ### pigdevil2010 - Last Palette
-=> /other/last_pallete.txt Source code
-=> /audio/last_pallete.ogg pigdevil2010 - Last Palette
+=> /other/last_pallete.txt 🖹 Source code
+=> /audio/last_pallete.ogg 🎼 pigdevil2010 - Last Palette
 
 ## В заключение
 О байтбите я знаю давно, но мало кому говорю. Обычно забываю о нём, но возвращаюсь к нему время от времени, и экспериментирую.
