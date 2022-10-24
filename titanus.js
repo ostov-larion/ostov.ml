@@ -21,16 +21,19 @@ let options = {
 
 let app = gemini(options)
 
-app.input('/:cgi', (req, res) => {
-    try {
-        execFileSync(`./${req.params.cgi}`, [req.query.replace(/\n/g,'\\n')])
+app.on('/:cgi', (req, res) => {
+    if(req.query) {
+      try {
+          execFileSync(`./${req.params.cgi}`, [req.query.replace(/\n/g,'\\n')])
+      }
+      catch(e) {
+          console.log('INPUT ERROR: CGI error.')
+          res.error(52, "This route not found.")
+          return
+      }
+      res.redirect(`gemini://${flags.domain}/${req.params.cgi}.gmi`)
     }
-    catch(e) {
-        console.log('INPUT ERROR: CGI error.')
-        res.error(52, "This route not found.")
-        return
-    }
-    res.redirect(`gemini://${flags.domain}/${req.params.cgi}.gmi`)
+    else res.input("Type something")
 })
 
 app.titan('/:cgi', (req, res) => {
