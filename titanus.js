@@ -24,7 +24,7 @@ let app = gemini(options)
 app.on('/:cgi', (req, res) => {
     if(req.query) {
       try {
-          execFileSync(`./${req.params.cgi}`, [decodeURI(req.query).replace(/\n/g,'\\n')])
+          execFileSync(`./${req.params.cgi}`, [decodeURIComponent(req.query).replace(/\n/g,'\\n')])
       }
       catch(e) {
           console.log(`INPUT ERROR: CGI error. ${e}`)
