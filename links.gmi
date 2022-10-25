@@ -3,8 +3,6 @@
 Красивый гемини-браузер. Именно им и пользуюсь.
 => https://skyjake.github.io/fdroid/repo/?fingerprint=46AEA2F2D86047AD65DA955126C6532F79B05AF2BFEFFC5CF1B467A79E686F86 Lagrange Android
 Лагранж для ведра. Не менее красив. Я заметил, что многие пользуются Deedum (или как его там), но ведь есть альтернатива лучше!
-=> gemini://nixo.xyz/b/gemini/ DNA - Anonymous Board
-Текстовая борда. Полумертвая, к сожалению.
 => gemini://phreedom.club/ Клуб "Свобода"
 Русскоязычный пабникс.
 => gemini://warmedal.se/~antenna/ Антенна
@@ -14,7 +12,7 @@
 => gemini://konpeito.media/ Konpeito
 Лоуфай-хипохоп альбом эксклюзивно для Gemini.
 => gemini://gemini.circumlunar.space/users/hundredrabbits/ Hundredrabbits
-Давно известный мне творческий коллектив. Пользуюсь их софтом. 
+Давно известный мне творческий коллектив. Пользуюсь их софтом.
 => gemini://cdg.thegonz.net/ CDG - Collaborative Directory of Gemini
 Директория, в которой любой может добавить ссылку.
 
@@ -23,5 +21,6 @@
 => gemini://hugeping.ru/ Станция Пинг
 => gemini://armitage.flounder.online/ armitage
 => gemini://topotun.hldns.ru/ Топотун
+=> gemini://offpunk.com/ Offpunk
 
 => / Назад
