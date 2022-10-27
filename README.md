@@ -1,2 +1,2 @@
 # ostov.ml
-Ostov's gemini capsule
+Ostov's gemini capsule.
