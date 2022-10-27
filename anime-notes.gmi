@@ -29,6 +29,7 @@
 ```
 
 ## Песнь ночных сов
+=> ./img/YofukashinoUtaE.webp Poster
 ```
 Другое название: Call of the Night
 Сезон: лето-2022
