@@ -11,4 +11,3 @@ ipfs://${CID} Description of file or directory
                                         🟅 🟅 🟅
 ```
 
-
