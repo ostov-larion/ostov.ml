@@ -1,1 +1,1 @@
-echo "=> $1" >> index.gmi
+sed -i 's/Place for your link/Place for your link\n=> $1/' ~ipfs.pub/index.gmi
