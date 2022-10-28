@@ -1,1 +1,1 @@
-   { head -n 13 ~ipfs.pub/index.gmi; echo "=> $1"; tail -n +14 ~ipfs.pub/index.gmi; } > ~ipfs.pub/index.gmi
+{ head -n 13 ~ipfs.pub/index.gmi; echo "=> $1"; tail -n +14 ~ipfs.pub/index.gmi; } > ~ipfs.pub/index.gmi
