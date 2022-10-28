@@ -1,0 +1,2 @@
+[[ ! "$1" =~ ^ipfs\:\/\/\S+ .+$ ]] && echo "Not IPFS link" && exit 1
+cat index.gmi | sed -i 's/🙦 Place for your link./🙦 Place for your link.\n=> $1/'
