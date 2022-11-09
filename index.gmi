@@ -35,8 +35,8 @@
 Почта для связи.
 
 ## 📝 Статьи
-=> /articles/duma.gmi 2022-11-9 Госдума и абсурд
-=> /articles/elementary-os.gmi 2022-11-8 Elementary OS
+=> /articles/duma.gmi 2022-11-09 Госдума и абсурд
+=> /articles/elementary-os.gmi 2022-11-08 Elementary OS
 => /articles/eo.gmi 2022-10-29 Pri Esperanto
 => /articles/bytebeat.gmi 2022-10-24 Bytebeat: музыка в одну строчку кода
 => /articles/nai.gmi 2022-10-20 NovelAI Image Generation
