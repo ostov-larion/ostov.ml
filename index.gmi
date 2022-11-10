@@ -35,6 +35,7 @@
 Почта для связи.
 
 ## 📝 Статьи
+=> /articles/cowboy-bebop.gmi 2022-11-10 Cowboy Bebop
 => /articles/duma.gmi 2022-11-09 Госдума и абсурд
 => /articles/elementary-os.gmi 2022-11-08 Elementary OS
 => /articles/eo.gmi 2022-10-29 Pri Esperanto
