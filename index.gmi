@@ -33,6 +33,7 @@
 Почта для связи.
 
 ## 📝 Статьи
+=> /articles/gem1.gmi 2022-11-22 RE: RE: О развитии Gemini
 => /articles/gem0.gmi 2022-11-18 О развитии Gemini
 => /articles/cowboy-bebop.gmi 2022-11-10 Cowboy Bebop
 => /articles/duma.gmi 2022-11-09 Госдума и абсурд
