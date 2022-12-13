@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <title>Reum</title>
+    <meta charset=utf-8 />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  </head>
+  <style>
+    body {
+      font-family: monospace;
+      font-size: larger;
+      background-color: #333;
+      color: #eee;
+      margin: 10%;
+      scroll-behavior: smooth;
+    }
+    input[type=text] {
+      width: 98%;
+      border: none;
+      outline: none;
+      background-color: #333;
+      color: #eee;
+      font-family: monospace;
+      font-size: large;
+    }
+    pre {
+      white-space: pre-wrap;
+    }
+    a {
+      background-color: #333;
+      color: #eee;
+    }
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+      scrollbar-width: auto;
+      scrollbar-color: #eeeeee #333333;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: #333333;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #eeeeee;
+      border-radius: 0px;
+      border: 0px solid #ffffff;
+    }
+  </style>
+  <script>
+  function similar(s1, s2) {
+    s1 = s1.toLowerCase().trim().split(' ')
+    s2 = s2.toLowerCase().trim().split(' ')
+
+    let prod = 1
+    for(let i in s1) {
+      prod = prod * similarWord(s1[i], s2[i])
+    }
+
+    return prod
+  }
+
+  function similarWord(s1, s2) {
+    console.log(s1, s2)
+    //if(s1 > s2) s1 = s1.slice(s1.length - s2.length)
+    //else s2 = s2.slice(s2.length - s1.length)
+
+    let p = 0
+    let n = 0
+
+    for(let i in s1) {
+        if(s1[i] == s2[i]) p++
+        else n++
+    }
+
+    return p/(p + n)
+  }
+
+  function enter(text, input) {
+    let m = page["действия"].map(e => [Boolean(text.match(new RegExp(e["?"]))), e["="], e[")"], e["+"]]).find(e => e[0] == true)
+    say(`> ${text}`)
+    if(!m || !m[0]) {
+      say("Я не понимаю...")
+      input.value = ""
+      location.href = "#input"
+      return
+    }
+    say(m[1])
+    if(m[2]) jump(m[2])
+    if(m[3]) {
+      say("<h1>The End</h1>")
+      document.querySelector("input[type=text]").disabled = true
+    }
+    location.href = "#input"
+    input.value = ""
+  }
+
+  function say(text) {
+    document.querySelector("main").innerHTML += "<pre>" + text + "</pre>"
+  }
+
+  let AST;
+  let page;
+
+  function run(string) {
+    localStorage.game = string
+    document.querySelector("main").innerHTML = ""
+    document.querySelector("input[type=text]").disabled = false
+    try {
+      AST = jsyaml.loadAll(string)
+      jump(AST[0]["название"])
+    }
+    catch(e) {
+      document.querySelector("main").innerHTML = "<i>Bad script.</i>"
+    }
+  }
+
+  function getPage(title) {
+    return AST.find(e => e["название"] == title)
+  }
+
+  function jump(title) {
+    page = getPage(title)
+    say(`<h1>${page["название"]}</h1>`)
+    say(`${page["описание"]}`)
+  }
+
+  function loadFile(file) {
+    fr = new FileReader()
+    fr.onloadend = () => run(fr.result)
+    fr.readAsText(file)
+  }
+  </script>
+  <body>
+    <main>
+      <h1>Добро пожаловать в Reum</h1>
+    </main>
+    <p>> <input type=text id="input" disabled autocomplete="off" placeholder="Твоя команда..." onchange=enter(this.value,this) />
+    <p><a href="javascript:document.querySelector('input[type=file]').click()">Загрузить сценарий</a>
+    <input type=file style="display: none;" onchange=loadFile(this.files[0]) />
+    <script>if(localStorage.game) run(localStorage.game)</script>
+  </body>
+</html>
