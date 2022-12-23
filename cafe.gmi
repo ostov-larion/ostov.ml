@@ -2,7 +2,7 @@
 Добро пожаловать в мое кафе.
 => /img/cafe_winter.png ☕ Cafe
 => /audio/01_-_toy-dog.mp3 🎷 Toy Dog
-=> /audio/02_-_sneakers-for-men.mp3v 🎷 Sneakers For Men
+=> /audio/02_-_sneakers-for-men.mp3 🎷 Sneakers For Men
 => /audio/03_-_pinot-noir.mp3 🎷 Pinot Noir
 => /audio/04_-_high-heels.mp3 🎷 Nigh Heels
 => /audio/05_-_payphone.mp3 🎷 Payphone
