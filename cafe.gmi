@@ -14,5 +14,5 @@
 => /audio/11_-_pictionary.mp3 🎷 Pictionary
 => /audio/12_-_bon-appétit-bonus.mp3 🎷 Bon appétit (Bonus)
 => /audio/13_-_body-glove-bonus.mp3 🎷 Body glove (Bonus)
-=> /audio/14_-_british-open-bonus.mp3 🎷 British open
+=> /audio/14_-_british-open-bonus.mp3 🎷 British open (Bonus)
 => /audio/15_-_magic-eye-bonus.mp3 🎷 Magic Eye (Bonus)
