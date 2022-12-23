@@ -1,9 +1,18 @@
 # Кафешка
 Добро пожаловать в мое кафе.
-=> /img/cafe.jpg ☕ Cafe
-=> /audio/NKMusic-Hansa.ogg 🎷 NK Music - Hansa
-=> /audio/NKMusic-Bergelmir.ogg 🎷 NK Music - Bergelmir (feat. mariussax)
-=> /audio/NKMusic-Durga.ogg 🎷 NK Music - Durga
-=> /audio/NKMusic-Heracles.ogg 🎷 NK Music - Heracles
-=> /audio/NKMusic-Vulpecula.ogg 🎷 NK Music - Vulpecula
-=> /audio/NKMusic-Rbhus.ogg 🎷 NK Music - Rbhus
+=> /img/cafe_winter.png ☕ Cafe
+=> ./01_-_toy-dog.mp3 🎷 Toy Dog
+=> ./02_-_sneakers-for-men.mp3v 🎷 Sneakers For Men
+=> ./03_-_pinot-noir.mp3 🎷 Pinot Noir
+=> ./04_-_high-heels.mp3 🎷 Nigh Heels
+=> ./05_-_payphone.mp3 🎷 Payphone
+=> ./06_-_venetian-blinds.mp3 🎷 Venetian Blinds
+=> ./07_-_showbiz.mp3 🎷 Snowbiz
+=> ./08_-_windchimes.mp3 🎷 Windchimes
+=> ./09_-_chit-chat.mp3 🎷 Chit Chat
+=> ./10_-_private-hospital.mp3 🎷 Private Hospital
+=> ./11_-_pictionary.mp3 🎷 Pictionary
+=> ./12_-_bon-appétit-bonus.mp3 🎷 Bon appétit (Bonus)
+=> ./13_-_body-glove-bonus.mp3 🎷 Body glove (Bonus)
+=> ./14_-_british-open-bonus.mp3 🎷 British open
+=> ./15_-_magic-eye-bonus.mp3 🎷 Magic Eye (Bonus)
