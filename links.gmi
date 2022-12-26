@@ -17,6 +17,8 @@
 Директория, в которой любой может добавить ссылку.
 => gemini://geddit.glv.one/ Geddit
 Сборник ссылок.
+=> gemini://floppy.p1x.in/floppy.gmi Floppy Capsule
+Капсула на одном флоппи-диске.
 
 ## Русскоязычные бложики
 => gemini://phreedom.club/~tolstoevsky/ Толстоевский
