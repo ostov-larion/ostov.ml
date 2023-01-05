@@ -1,0 +1,2 @@
+# Ostov
+=> gemini://ostov.ml/en/cowboy-bebop.gmi 2023-01-05 Cowboy Bebop
